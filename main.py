@@ -74,6 +74,9 @@ def main():
 
     data_loader = client.api_data("data_loader")
 
+    if not data_loader.exists():
+        os.makedirs(data_loader, exist_ok=True)
+
     # Set permissions for the api_data/data_loader to be visible to everyone
     permissions = SyftPermission.datasite_default(email=client.email)
     permissions.read.append("GLOBAL")
