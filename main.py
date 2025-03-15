@@ -78,8 +78,7 @@ def main():
         os.makedirs(data_loader, exist_ok=True)
 
     # Set permissions for the api_data/data_loader to be visible to everyone
-    permissions = SyftPermission.datasite_default(email=client.email)
-    permissions.read.append("GLOBAL")
+    permissions = SyftPermission.mine_with_public_read(client, data_loader)
     permissions.save(data_loader)
 
     output_path = data_loader / "datasets.json"
