@@ -72,12 +72,12 @@ def main():
     dataset_private_folder = get_app_private_data(client)
     os.makedirs(dataset_private_folder, exist_ok=True)
 
-    data_loader = client.api_data("data_loader")
+    data_loader = client.app_data("data_loader")
 
     if not data_loader.exists():
         os.makedirs(data_loader, exist_ok=True)
 
-    # Set permissions for the api_data/data_loader to be visible to everyone
+    # Set permissions for the app_data/data_loader to be visible to everyone
     permissions = SyftPermission.mine_with_public_read(client, data_loader)
     permissions.save(data_loader)
 
