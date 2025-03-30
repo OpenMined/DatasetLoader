@@ -1,7 +1,8 @@
 import os
 import json
 import time
-from syftbox.lib import Client, SyftPermission
+from syft_core import Client
+from syft_core.permissions import SyftPermission
 from pathlib import Path
 
 
