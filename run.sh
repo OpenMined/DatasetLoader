@@ -2,7 +2,7 @@
 set -e
 
 uv venv -p 3.12 .venv
-uv pip install -U syft_core
+uv pip install -U syft-core
 . .venv/bin/activate
 
 while true; do
